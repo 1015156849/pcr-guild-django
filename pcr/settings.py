@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'character',
     'admin',
     'battle',
-    'report'
+    'report',
+    'werkzeug_debugger_runserver',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
