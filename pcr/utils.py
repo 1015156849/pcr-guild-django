@@ -38,6 +38,8 @@ def allow(methods: list):
     def decorator(func):
         @functools.wraps(func)
         def wrapper(request, *args, **kwargs):
+            if request.method == 'OPTIONS':
+                return HttpResponse(status=200)
             if request.method not in methods:
                 return HttpResponse(status=404)
             return func(request, *args, **kwargs)
